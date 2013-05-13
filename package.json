@@ -1,0 +1,7 @@
+{
+  "name": "angular-examples",
+  "version": "0.1.0",
+  "devDependencies": {
+    "connect": "2.7.9"
+  }
+}
