@@ -4,6 +4,7 @@ var HTTP_PORT = 8080;
 
 var util = require('util');
 var connect = require('connect');
+var colorize = require('colorize')
 
 var Server = {
   run: function (port, terminal) {
@@ -16,25 +17,38 @@ var Server = {
 }
 
 var ColorizedTerminal = {
-  YELLOW: "\033[33m",
-  CYAN: "\033[36m",
-  NORMAL: "\033[0m",
-
   info: function(message, args) {
-    args = this._colorize(Array.prototype.slice.call(arguments, 1), this.CYAN, this.YELLOW)
-    console.log(this.YELLOW + this._format(message, args) + this.NORMAL)
+    args = this._colorize_values('cyan', Array.prototype.slice.call(arguments, 1))
+    this._log(this._colorize('yellow', this._format(message, args)))
   },
 
   message: function(text) {
-    console.log(text)
+    this._log(text)
+  },
+
+  _log: function(text) {
+    colorize.console.log(text)
   },
 
   _format: function(message, args) {
     return util.format.apply(this, [message].concat(args))
   },
 
-  _colorize: function(args, color, reset) {
-    return args.map(function(arg) { return color + arg + reset })
+  _colorize_values: function(color, args) {
+    return args.map(partial(this._colorize, color))
+  },
+
+  _colorize: function(color, text) {
+    return util.format('#%s[%s]', color, text)
+  }
+}
+
+function partial(fn) {
+  fixed_args = Array.prototype.slice.call(arguments, 1)
+  return function() {
+    dynamic_args = Array.prototype.slice.call(arguments)
+    args = fixed_args.concat(dynamic_args)
+    return fn.apply(null, args)
   }
 }
 
