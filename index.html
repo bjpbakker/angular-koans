@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="koans">
   <head>
     <title>Angular Koans</title>
+
+    <style>
+      [ng-cloak] { display: none; }
+    </style>
   </head>
 
-  <body>
-    <h1>Angular Koans</h1>
+  <body ng-cloak>
+    <h1>{{app.name}}</h1>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+    <script src="scripts/app/app.js"></script>
   </body>
 </html>
