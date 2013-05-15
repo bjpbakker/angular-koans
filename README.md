@@ -4,11 +4,21 @@ This project contains some koans for learning AngularJS. Using tags various prac
 
 ## Koans
 
-A list of koans is simply populated from the tags in this repository. The goal of a koan is described in the README at hand. These goals are also accumulated in below.
+A list of koans is simply populated from the tags in this repository. These are annotated tags containing a description of the koan.
 
-### 1 - Bootstrap Angular
+To get a list of koans with a brief summary, you list the tags in the repository:
 
-The obvious goal of this first koan is to bootstrap an Angular application. You must load the AngularJS library, create a custom Angular application, and bootstrap the application using the ng-app directive.
+    $ git tag -ln1
+
+To read the full description of a koan, you show the full annotation of the commit.
+
+    $ git show --quiet <tag>
+
+Note: this also includes the message of the commit that is marked by the tag. You can safely ignore this.
+
+For each kaon two tags are provided. The first one marks the starting point of the koan. The second one marks the solution point in this repository. To start working on a koan you'd branch off the starting point. For example, to start with first koan you do create a solving branch and checkout that branch:
+
+    $ git checkout -b bootstrap-solution 01-bootstrap-angular
 
 ## Running the Koans
 
