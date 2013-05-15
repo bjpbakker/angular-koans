@@ -20,6 +20,8 @@ For each kaon two tags are provided. The first one marks the starting point of t
 
     $ git checkout -b bootstrap-solution 01-bootstrap-angular
 
+Tip: when you get stuck solving a koan you can consider reading the commit logs of the corresponding solution tag. These commit messages should be verbose on the changes.
+
 ## Running the Koans
 
 These koans are created using Node.js. If you haven't already make sure to install Node.js from [nodejs.org](http://nodejs.org/). Installation details are provided by Node.js.
