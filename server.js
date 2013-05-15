@@ -8,10 +8,10 @@ var colorize = require('colorize')
 
 var Server = {
   run: function (port, terminal) {
-    connect.createServer(
-        connect.static(__dirname)
-    ).listen(port);
-    terminal.info("Server serving %s on port: %s", __dirname, port)
+    connect()
+      .use(connect.static(__dirname))
+      .listen(port);
+    terminal.info("Server started on port: %s", __dirname, port)
     terminal.message("press CTRL-C to stop the server")
   }
 }
