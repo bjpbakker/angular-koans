@@ -5,14 +5,26 @@ var HTTP_PORT = 8080;
 var util = require('util');
 var connect = require('connect');
 var colorize = require('colorize')
+var messageboard = require('./api/messageboard/main');
 
 var Server = {
   run: function (port, terminal) {
     connect()
       .use(connect.static(__dirname))
+      .use(this._dispatch)
       .listen(port);
     terminal.info("Server started on port: %s", __dirname, port)
     terminal.message("press CTRL-C to stop the server")
+  },
+
+  _dispatch: function(req, res, next) {
+    var regex = /^\/api\/messageboard\//;
+    if (regex.test(req.url)) {
+      internal_request = { method: req.method, url: req.url.replace(regex, '') }
+      messageboard(internal_request, res, next);
+    } else {
+      next()
+    }
   }
 }
 
