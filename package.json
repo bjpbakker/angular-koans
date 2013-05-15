@@ -1,8 +1,20 @@
 {
   "name": "angular-examples",
   "version": "0.1.0",
-  "devDependencies": {
+  "author": "Bart Bakker <bart@thesoftwarecraft.com>",
+  "dependencies": {
     "connect": "2.7.9",
     "colorize": "0.1.0"
+  },
+  "devDependencies": {
+    "should": "*",
+    "sinon": "*",
+    "mocha": "*"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "scripts": {
+    "test": "mocha"
   }
 }
