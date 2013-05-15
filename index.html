@@ -3,14 +3,30 @@
   <head>
     <title>Angular Koans</title>
 
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
     <style>
       [ng-cloak] { display: none; }
+      body > .container { padding-top: 60px; }
     </style>
   </head>
 
   <body ng-cloak>
-    <h1>{{app.name}}</h1>
-    <div ng-view></div>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#">{{app.name}}</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#/home">Home</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div ng-view></div>
+    </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
     <script src="scripts/app/app.js"></script>
