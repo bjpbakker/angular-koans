@@ -13,7 +13,7 @@ var Server = {
       .use(connect.static(__dirname))
       .use(this._dispatch)
       .listen(port);
-    terminal.info("Server started on port: %s", __dirname, port)
+    terminal.info("Server started on port: %s", port)
     terminal.message("press CTRL-C to stop the server")
   },
 
