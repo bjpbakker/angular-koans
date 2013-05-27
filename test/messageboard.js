@@ -1,6 +1,6 @@
 var sinon = require('sinon')
 
-var MessageBoard = require('../api/messageboard/messageboard.js')
+var MessageBoard = require('../lib/messageboard/messageboard.js')
 
 describe('message-board', function() {
   var subject

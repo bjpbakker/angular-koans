@@ -1,4 +1,4 @@
-var MessageBoard = require('../api/messageboard')
+var MessageBoard = require('../lib/messageboard')
 
 var fixedMessageStore = {
   messages: function() {
