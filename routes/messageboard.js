@@ -1,4 +1,4 @@
-var MessageBoard = require('./messageboard.js')
+var MessageBoard = require('../api/messageboard')
 
 var fixedMessageStore = {
   messages: function() {
@@ -10,12 +10,8 @@ var fixedMessageStore = {
 var messageBoard = Object.create(MessageBoard);
 messageBoard.store = fixedMessageStore;
 
-exports = module.exports = function main(req, res, next) {
-  var fn = messageBoard[req.url];
-  if (fn === undefined) {
-    next()
-  } else {
-    res.end(JSON.stringify(fn.apply(messageBoard)))
+exports = module.exports = {
+  list: function(req, res) {
+    res.end(JSON.stringify(messageBoard.list()));
   }
 }
-

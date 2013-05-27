@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "author": "Bart Bakker <bart@thesoftwarecraft.com>",
   "dependencies": {
-    "connect": "2.7.9",
+    "express": "3.x",
     "colorize": "0.1.0"
   },
   "devDependencies": {
@@ -15,6 +15,7 @@
     "node": ">=0.10"
   },
   "scripts": {
+    "start": "node app.js",
     "test": "mocha"
   }
 }
