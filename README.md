@@ -14,7 +14,7 @@ Read the description and get cracking at it. To move to the next koan checkout t
 tag, then tag `3-greetings`, and so on.
 
 The remainder of this README describes how to run a koan and provides more details on the koan and 
-solution tags provided by this repostory.
+solution tags provided by this repository.
 
 ## Running a Koan
 
@@ -22,7 +22,7 @@ These koans are created using Node.js. If you haven't already make sure to insta
 [nodejs.org](http://nodejs.org/). Installation details are provided by Node.js.
 
 From any tag you can run the koans using the included server. First you need to install the required 
-depenendecies.
+dependencies.
 
     $ npm install
 
